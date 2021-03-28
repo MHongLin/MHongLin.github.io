@@ -11652,3 +11652,17 @@ figure.highlight .section {
     padding: 1.5rem 1rem;
   }
 }
+body {
+  background: url("https://z3.ax1x.com/2021/03/26/6v5aVI.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+footer {
+  background: url("https://z3.ax1x.com/2021/03/26/6v5zRO.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: cove;
+}
