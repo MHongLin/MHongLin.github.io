@@ -11653,19 +11653,19 @@ figure.highlight .section {
     padding: 1.5rem 1rem;
   }
 }
-body {
+head {
   background: url("https://z3.ax1x.com/2021/03/26/6v5aVI.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
-  background-size: cover;
+  background-size: cove;
 }
-footer {
-  background: url("https://z3.ax1x.com/2021/03/26/6v5zRO.jpg");
+body {
+  background: url("https://z3.ax1x.com/2021/03/27/6xY1Ds.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
-  background-size: cove;
+  background-size: cover;
 }
 body {
   counter-reset: card;
