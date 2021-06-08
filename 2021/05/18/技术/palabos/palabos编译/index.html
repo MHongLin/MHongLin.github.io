@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>palabos使用-Cmake编译 - 阳光,风,还有...</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="月异"><meta name="msapplication-TileImage" content="/img/mylogo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="月异"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="各种工具，可真多。"><meta property="og:type" content="blog"><meta property="og:title" content="palabos使用-Cmake编译"><meta property="og:url" content="http://example.com/2021/05/18/%E6%8A%80%E6%9C%AF/palabos/palabos%E7%BC%96%E8%AF%91/"><meta property="og:site_name" content="阳光,风,还有..."><meta property="og:description" content="各种工具，可真多。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://z3.ax1x.com/2021/05/12/gdxRAK.png"><meta property="article:published_time" content="2021-05-18T09:18:48.000Z"><meta property="article:modified_time" content="2021-06-08T07:22:17.411Z"><meta property="article:author" content="缪红林"><meta property="article:tag" content="palabos"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://z3.ax1x.com/2021/05/12/gdxRAK.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/05/18/%E6%8A%80%E6%9C%AF/palabos/palabos%E7%BC%96%E8%AF%91/"},"headline":"palabos使用-Cmake编译","image":["https://z3.ax1x.com/2021/05/12/gdxRAK.png"],"datePublished":"2021-05-18T09:18:48.000Z","dateModified":"2021-06-08T07:22:17.411Z","author":{"@type":"Person","name":"缪红林"},"description":"各种工具，可真多。"}</script><link rel="canonical" href="http://example.com/2021/05/18/%E6%8A%80%E6%9C%AF/palabos/palabos%E7%BC%96%E8%AF%91/"><link rel="icon" href="/img/mylogo.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?c10e8e4df694669fb823f230f340595a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/titlelogo.svg" alt="阳光,风,还有..." height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://z3.ax1x.com/2021/05/12/gdxRAK.png" alt="palabos使用-Cmake编译"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-05-18T09:18:48.000Z" title="2021/5/18 下午5:18:48">2021-05-18</time>发表</span><span class="level-item"><time dateTime="2021-06-08T07:22:17.411Z" title="2021/6/8 下午3:22:17">2021-06-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span> / </span><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/palabos/">palabos</a></span><span class="level-item">9 分钟读完 (大约1289个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">palabos使用-Cmake编译</h1><div class="content"><font color=blue face="楷体">各种工具，可真多。</font>
+
+<span id="more"></span>
+<h2 id="1-make-amp-makefiles"><a href="#1-make-amp-makefiles" class="headerlink" title="1 make &amp; makefiles"></a>1 make &amp; makefiles</h2><h3 id="g-编译的-4-个过程"><a href="#g-编译的-4-个过程" class="headerlink" title="g++ 编译的 4 个过程"></a>g++ 编译的 4 个过程</h3><ul>
+<li>预处理，-E 表示编译器仅对输入文件进行预处理，之后还是源文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bush">g++ -E test.cpp -o test.i<br></code></pre></td></tr></table></figure>
+<ul>
+<li>编译，产生汇编语言文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bush">g++ -S test.i -o test.s<br></code></pre></td></tr></table></figure>
+<ul>
+<li>汇编语言，生成机器语言的目标代码(注意这边的 c 是个小写的)：正确的源文件都可以被编译成目标文件，每个源文件都有一个对应的目标文件。<font face="楷体" color=green>编译器只检查语法，函数和变量是否被声明</font>。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bush">g++ -c test.s -o test.o<br></code></pre></td></tr></table></figure>
+<ul>
+<li>链接，生成可执行文件：使用目标文件链接成库文件。目标文件太多了，链接时需要指出目标文件的文件名，对于编译很不方便，给目标文件打个包，这个包就是库文件。<font face="楷体" color=green>链接器会在所有的目标文件中寻找函数的实现</font>。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bush">g++ test.o -o test<br></code></pre></td></tr></table></figure>
+<h3 id="一个小例子说明-makefile"><a href="#一个小例子说明-makefile" class="headerlink" title="一个小例子说明 makefile"></a>一个小例子说明 makefile</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://seisman.github.io/how-to-write-makefile/introduction.html#id1">makefile</a>: 文件依赖关系+编译命令</li>
+</ul>
+<p>当需要编译很多源文件的大工程时，可以使用 makefiles 让编译更高效。makefiles 是一系列的 gcc/g++ 命令，并且记录文件之间的依赖关系。Make 是一个工具，执行 makefiles 中的内容。 </p>
+<ul>
+<li>Hello.cpp</li>
+</ul>
+<p>具体函数的实现</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">//这是Hello.cpp</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;Hello.h&quot;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br>  <br>Hello::Hello()&#123;<br><br>&#125;<br>  <br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Hello::Display</span><span class="hljs-params">()</span></span>&#123;<br>      <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello,ivy!\n&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>      <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>Hello.h</li>
+</ul>
+<p>头文件中是声明</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">//这是Hello.h</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hello</span> &#123;</span><br>  <span class="hljs-keyword">public</span>:<br>       Hello();<br>       <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Display</span><span class="hljs-params">()</span></span>;<br>&#125;;    <br></code></pre></td></tr></table></figure>
+<ul>
+<li>main.cpp</li>
+</ul>
+<p>总的文件</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;Hello.h&quot;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    Hello theHello;<br>     theHello.Display();<br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;  <br></code></pre></td></tr></table></figure>
+<ul>
+<li>用命令行的方法分四步编译</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bush">$ g++ -E Hello.cpp -o Hello.i<br>$ g++ -E main.cpp -o main.i<br>$ g++ -S Hello.cpp -o Hello.s<br>$ g++ -S main.cpp -o main.s<br>$ g++ -c Hello.cpp -o Hello.o<br>$ g++ -c main.cpp -o main.o<br>$ g++ Hello.o main.o -o main<br>$.&#x2F;main<br></code></pre></td></tr></table></figure>
+<ul>
+<li>用 makefile 文件编译，学习写这个文件看这边 $\to$ <a target="_blank" rel="noopener" href="https://seisman.github.io/how-to-write-makefile/introduction.html#id1">makefile</a></li>
+</ul>
+<p>clean 命令后面没有依赖关系，所以得用 make clean 命令来执行。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Makefile"><span class="hljs-section">Hello:mian.o Hello.o</span><br>	g++ main.o Hello.o -o Hello<br><span class="hljs-section">mian.o:main.cpp</span><br>	g++ -c main.cpp -o main.o <br><span class="hljs-section">Hello.o:Hello.cpp</span><br>	g++ -c Hello.cpp -o Hello.o<br><span class="hljs-section">clean: </span><br>	rm Hello.o main.o Hello<br></code></pre></td></tr></table></figure>
+<p>makefile 中定义变量，并且用 $(变量名) 使用变量。类似于宏，只要修改一处即可。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Makefile">object = main.o Hello.o<br><br><span class="hljs-section">Hello: <span class="hljs-variable">$(object)</span></span><br>	g++ <span class="hljs-variable">$(object)</span> -o Hello<br><span class="hljs-section">mian.o:main.cpp</span><br>	g++ -c main.cpp -o main.o <br><span class="hljs-section">Hello.o:Hello.cpp</span><br>	g++ -c Hello.cpp -o Hello.o<br><span class="hljs-section">clean: </span><br>	rm <span class="hljs-variable">$(object)</span> Hello<br></code></pre></td></tr></table></figure>
+<ul>
+<li>makefile 可以自动推导依赖文件的关系，以及命令</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Makefile">object = main.o Hello.o<br><br><span class="hljs-section">Hello: <span class="hljs-variable">$(object)</span></span><br>	g++ <span class="hljs-variable">$(object)</span> -o Hello<br><span class="hljs-section">mian.o:</span><br><span class="hljs-section">Hello.o:</span><br><span class="hljs-section">clean: </span><br>	rm <span class="hljs-variable">$(object)</span> Hello<br></code></pre></td></tr></table></figure>
+<h2 id="2-Cmake"><a href="#2-Cmake" class="headerlink" title="2 Cmake"></a>2 Cmake</h2><p>对于大型工程，写 makefile 是很困难的，于是有了 Cmake 这个工具。Cmake 是一个自动生成 makefiles 的工具。CMake是一个跨平台的安装编译工具，可以用简单的语句来描述所有平台的安装(编译过程)。</p>
+<h3 id="语法特性介绍"><a href="#语法特性介绍" class="headerlink" title="语法特性介绍"></a>语法特性介绍</h3><ul>
+<li>基本语法格式：指令（参数1 参数2…）</li>
+</ul>
+<p>参数用括弧括起来，参数之间用空格或是分号分开</p>
+<ul>
+<li><p>指令是大小写无关的，参数和变量是大小写相关的</p>
+</li>
+<li><p>变量使用${}方式取值，但是在 IF 语句中直接使用变量名 </p>
+</li>
+</ul>
+<h3 id="重要指令和常用变量"><a href="#重要指令和常用变量" class="headerlink" title="重要指令和常用变量"></a>重要指令和常用变量</h3><ul>
+<li>重要指令</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs Cmake"><span class="hljs-comment"># 指定最低版本要求</span><br><span class="hljs-keyword">cmake_minimum_required</span>(VERSION <span class="hljs-number">2.8</span>.<span class="hljs-number">3</span>)<br><br><span class="hljs-comment"># 指定工程名称为 HELLOWORLD</span><br><span class="hljs-keyword">project</span>(HELLOWORLD)<br><br><span class="hljs-comment"># 显式定义变量，定义变量 SRC，其值为 sayhello.cpp hello.cpp</span><br><span class="hljs-keyword">set</span>(SRC sayhello.cpp hello.cpp)<br><br><span class="hljs-comment"># include_directories 指定头文件的搜索路径，相当于 g++ 编译器的 -l 参数</span><br><span class="hljs-keyword">include_directories</span>(/usr/<span class="hljs-keyword">include</span>/myincludefolder ./<span class="hljs-keyword">include</span>)<br><br><span class="hljs-comment"># link_directories 向工程中添加多个库文件的搜索路径</span><br><span class="hljs-keyword">link_directories</span>(/usr/lib/mylibfolder ./lib)<br><br><span class="hljs-comment"># add_library 通过前面定义的变量生成 libhello.so 共享库</span><br><span class="hljs-keyword">add_library</span>(hello SHARED <span class="hljs-variable">$&#123;SRC&#125;</span>)<br><br><span class="hljs-comment"># add_executable编译 main.cpp 生成可执行文件 main</span><br><span class="hljs-keyword">add_executable</span>(main main.cpp)<br><br><span class="hljs-comment"># target_link_libraries 为可执行文件 main 链接 hello 动态库</span><br><span class="hljs-keyword">target_link_libraries</span>(main hello)<br><br><span class="hljs-comment"># ...</span><br></code></pre></td></tr></table></figure>
+<p>源文件中主目录的 CMakeLists.txt 通过 add_subdirectory 添加子目录的 CMakeLists.txt </p>
+<ul>
+<li>常用变量</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Cmake"><span class="hljs-comment"># 变量 CMAKE_BUILD_TYPE，设置编译类型为 Debug</span><br><span class="hljs-keyword">set</span>(CMAKE_BUILD_TYPE Debug) <br><br><span class="hljs-comment"># ...</span><br></code></pre></td></tr></table></figure>
+<h3 id="Cmake-编译工程"><a href="#Cmake-编译工程" class="headerlink" title="Cmake 编译工程"></a>Cmake 编译工程</h3><ul>
+<li>外部构建：</li>
+</ul>
+<p>创建 build 文件夹，加输出的中间文件都放在这个里面</p>
+<h3 id="Cmake-代码实践1：超级小的工程"><a href="#Cmake-代码实践1：超级小的工程" class="headerlink" title="Cmake 代码实践1：超级小的工程"></a>Cmake 代码实践1：超级小的工程</h3><p>还是 一个小例子说明 makefile 中的三个文件，文件结构：</p>
+<div align=center><img src="https://z3.ax1x.com/2021/05/24/gvx52F.png" border="0" width="20%" /></div>
+
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Cmake"><span class="hljs-comment"># 指定最低版本要求</span><br><span class="hljs-keyword">cmake_minimum_required</span>(VERSION <span class="hljs-number">3.0</span>)<br><br><span class="hljs-comment"># 指定工程名称</span><br><span class="hljs-keyword">project</span>(HELLO)<br><br><span class="hljs-comment"># 生成可执行文件</span><br><span class="hljs-keyword">add_executable</span>(main main.cpp)<br></code></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tiny008/article/details/90955534">简单构建linux c++ cmake工程结构</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/59450618">干货：构建C/C++良好的工程结构</a></p>
+<p><a target="_blank" rel="noopener" href="http://file.ncnynl.com/ros/CMake%20Practice.pdf">《CMake实践》</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fy4y1b7TC?p=22&amp;share_source=copy_web">基于VSCode和CMake实现C/C++开发 | Linux篇</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/coderfenghc/archive/2012/06/16/CMake_ch_01.html">CMake 手册详解</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>palabos使用-Cmake编译</p><p><a href="http://example.com/2021/05/18/技术/palabos/palabos编译/">http://example.com/2021/05/18/技术/palabos/palabos编译/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>缪红林</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-05-18</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-06-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/palabos/">palabos</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/05/28/%E7%99%BD%E5%99%AA%E9%9F%B3/%E4%B8%80%E9%97%AA%E8%80%8C%E8%BF%87%E7%9A%84%E6%83%B3%E6%B3%95/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">一闪而过的想法</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/05/04/%E6%8A%80%E6%9C%AF/palabos/palabos%E5%AE%89%E8%A3%85/"><span class="level-item">palabos 安装使用</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "1OUlBluARy7hn9aUFE4l9JHE-gzGzoHsz",
+            appKey: "nPybartthxmh8VPjDGEKCUqN",
+            
+            avatar: "mm",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/me.jpg" alt="月异"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">月异</p><p class="is-size-6 is-block">天上的星星和足下的土地</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>浙江 杭州 zju</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">6</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/MHongLin" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/MHongLin"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#1-make-amp-makefiles"><span class="level-left"><span class="level-item">1 make &amp; makefiles</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#g-编译的-4-个过程"><span class="level-left"><span class="level-item">g++ 编译的 4 个过程</span></span></a></li><li><a class="level is-mobile" href="#一个小例子说明-makefile"><span class="level-left"><span class="level-item">一个小例子说明 makefile</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-Cmake"><span class="level-left"><span class="level-item">2 Cmake</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#语法特性介绍"><span class="level-left"><span class="level-item">语法特性介绍</span></span></a></li><li><a class="level is-mobile" href="#重要指令和常用变量"><span class="level-left"><span class="level-item">重要指令和常用变量</span></span></a></li><li><a class="level is-mobile" href="#Cmake-编译工程"><span class="level-left"><span class="level-item">Cmake 编译工程</span></span></a></li><li><a class="level is-mobile" href="#Cmake-代码实践1：超级小的工程"><span class="level-left"><span class="level-item">Cmake 代码实践1：超级小的工程</span></span></a></li></ul></li></ul><li><a class="level is-mobile" href="#参考资料"><span class="level-left"><span class="level-item">参考资料</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">友情推荐</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/titlelogo.svg" alt="阳光,风,还有..." height="28"></a><p class="is-size-7"><span>&copy; 2021 缪红林</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
