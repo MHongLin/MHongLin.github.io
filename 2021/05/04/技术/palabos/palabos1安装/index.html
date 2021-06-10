@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>palabos 安装使用 - 阳光,风,还有...</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="月异"><meta name="msapplication-TileImage" content="/img/mylogo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="月异"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="初步体验一下 palabos 的使用。"><meta property="og:type" content="blog"><meta property="og:title" content="palabos 安装使用"><meta property="og:url" content="http://example.com/2021/05/04/%E6%8A%80%E6%9C%AF/palabos/palabos1%E5%AE%89%E8%A3%85/"><meta property="og:site_name" content="阳光,风,还有..."><meta property="og:description" content="初步体验一下 palabos 的使用。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://z3.ax1x.com/2021/05/12/gdxRAK.png"><meta property="article:published_time" content="2021-05-04T02:59:48.000Z"><meta property="article:modified_time" content="2021-06-08T11:01:15.792Z"><meta property="article:author" content="缪红林"><meta property="article:tag" content="palabos"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://z3.ax1x.com/2021/05/12/gdxRAK.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/05/04/%E6%8A%80%E6%9C%AF/palabos/palabos1%E5%AE%89%E8%A3%85/"},"headline":"palabos 安装使用","image":["https://z3.ax1x.com/2021/05/12/gdxRAK.png"],"datePublished":"2021-05-04T02:59:48.000Z","dateModified":"2021-06-08T11:01:15.792Z","author":{"@type":"Person","name":"缪红林"},"description":"初步体验一下 palabos 的使用。"}</script><link rel="canonical" href="http://example.com/2021/05/04/%E6%8A%80%E6%9C%AF/palabos/palabos1%E5%AE%89%E8%A3%85/"><link rel="icon" href="/img/mylogo.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?c10e8e4df694669fb823f230f340595a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/titlelogo.svg" alt="阳光,风,还有..." height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://z3.ax1x.com/2021/05/12/gdxRAK.png" alt="palabos 安装使用"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-05-04T02:59:48.000Z" title="2021/5/4 上午10:59:48">2021-05-04</time>发表</span><span class="level-item"><time dateTime="2021-06-08T11:01:15.792Z" title="2021/6/8 下午7:01:15">2021-06-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span> / </span><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/palabos/">palabos</a></span><span class="level-item">2 分钟读完 (大约346个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">palabos 安装使用</h1><div class="content"><p><font color=blue face="楷体">初步体验一下 palabos 的使用</font>。</p>
+<span id="more"></span>
+<p>palabos 是基于 LBM 方法的开源库。从官网下载，解压之后就是一堆 palabos 的源代码。源代码是用 C++ 写的，里面有各种类和对象，可供使用。</p>
+<h1 id="1-安装虚拟机"><a href="#1-安装虚拟机" class="headerlink" title="1 安装虚拟机"></a>1 安装虚拟机</h1><p>为了编译方便，最好是在 Linux 的环境下使用。所以先安装<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46680639/article/details/106018321">虚拟机</a>。</p>
+<p>安装<a target="_blank" rel="noopener" href="https://blog.csdn.net/dcrmg/article/details/74090307">VMware Tool</a>，让屏幕变大一点。</p>
+<h1 id="2-运行一个标准案例"><a href="#2-运行一个标准案例" class="headerlink" title="2 运行一个标准案例"></a>2 运行一个标准案例</h1><p>下载<a target="_blank" rel="noopener" href="https://gitlab.com/unigespc/palabos">palabos</a>。</p>
+<h2 id="一个方腔流的案例"><a href="#一个方腔流的案例" class="headerlink" title="一个方腔流的案例"></a>一个方腔流的案例</h2><p>按照官网的流程试一下：</p>
+<ul>
+<li>安装编译所需要的软件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$ sudo apt install gcc clang cmake make<br></code></pre></td></tr></table></figure>
+<ul>
+<li>配置 MPI 等功能</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$ sudo apt install libopenmpi-dev imagemagick libhdf5-dev libhdf5-mpi-dev ccache<br></code></pre></td></tr></table></figure>
+<ul>
+<li>试着跑一个案例</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">$ cd palabos&#x2F;examples&#x2F;showCases&#x2F;cavity2d&#x2F;build<br>$ cmake ..<br>$ make<br>$ cd ..<br>$ .&#x2F;cavity2d<br></code></pre></td></tr></table></figure>
+<p>这样就完成了一个方腔流的案例。</p>
+<h2 id="build-文件夹"><a href="#build-文件夹" class="headerlink" title="build 文件夹"></a>build 文件夹</h2><ul>
+<li><p>CMakeCache.txt</p>
+</li>
+<li><p>Makefile</p>
+</li>
+</ul>
+<p>在 build 文件夹中，使用 Cmake .. 生成的编译用的文件。 </p>
+<ul>
+<li><p>cmake_install.cmake</p>
+</li>
+<li><p>libpalabos.a</p>
+</li>
+</ul>
+<p>一个二进制的文件</p>
+<ul>
+<li>CmakeFiles 文件夹</li>
+</ul>
+<p>将 src 文件夹中所有的源文件都编译了，怪不得那么久。</p>
+<h1 id="3-以后"><a href="#3-以后" class="headerlink" title="3 以后"></a>3 以后</h1><p>要使用这个开源包，还得明白 LBM 的基本算法，有一定的编程知识，熟悉包里面定义的数据，类等。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>palabos 安装使用</p><p><a href="http://example.com/2021/05/04/技术/palabos/palabos1安装/">http://example.com/2021/05/04/技术/palabos/palabos1安装/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>缪红林</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-05-04</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-06-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/palabos/">palabos</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/05/18/%E6%8A%80%E6%9C%AF/palabos/palabos2%E7%BC%96%E8%AF%91/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">palabos使用-Cmake编译</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/04/23/%E5%8F%AF%E7%88%B1%E6%8C%96%E6%8E%98%E6%9C%BA/%E6%9C%89%E5%A3%B0%E7%AC%94%E8%AE%B0%E6%9C%AC-%E4%B8%BA%E4%BD%A0%E8%AF%BB%E4%B9%A6/"><span class="level-item">为您读书</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "1OUlBluARy7hn9aUFE4l9JHE-gzGzoHsz",
+            appKey: "nPybartthxmh8VPjDGEKCUqN",
+            
+            avatar: "mm",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/me.jpg" alt="月异"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">月异</p><p class="is-size-6 is-block">天上的星星和足下的土地</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>浙江 杭州 zju</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">15</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/MHongLin" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/MHongLin"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#1-安装虚拟机"><span class="level-left"><span class="level-item">1 安装虚拟机</span></span></a></li><li><a class="level is-mobile" href="#2-运行一个标准案例"><span class="level-left"><span class="level-item">2 运行一个标准案例</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#一个方腔流的案例"><span class="level-left"><span class="level-item">一个方腔流的案例</span></span></a></li><li><a class="level is-mobile" href="#build-文件夹"><span class="level-left"><span class="level-item">build 文件夹</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-以后"><span class="level-left"><span class="level-item">3 以后</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">友情推荐</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/titlelogo.svg" alt="阳光,风,还有..." height="28"></a><p class="is-size-7"><span>&copy; 2021 缪红林</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
